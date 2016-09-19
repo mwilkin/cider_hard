@@ -3,4 +3,5 @@ class Drink < ActiveRecord::Base
   validates :fruit, :presence => true
   validates :origin, :presence => true
   validates :cost, :presence => true
+  validates :description, :presence => true
 end
