@@ -1,5 +1,14 @@
 <h1>New Drinks</h1>
 
+<% if @drink.errors.any? %>
+  <h3>Oops. There were some errors. Please try again:</h3>
+  <ul>
+    <% @list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @drink do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
