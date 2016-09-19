@@ -11,6 +11,10 @@ class DrinksController < ApplicationController
     @drink = Drink.new
   end
 
+  def edit
+    @drink = Drink.find(params[:id])
+  end
+
   def create
     @drink = Drink.new(drink_params)
     if @drink.save
@@ -18,6 +22,21 @@ class DrinksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @drink = Drink.find(params[:id])
+    if @drink.update(drink_params)
+      redirect_to drinks_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @drink = Drink.fin(params[:id])
+    @drink.destroy
+    redirect_to drinks_path
   end
 
 private
