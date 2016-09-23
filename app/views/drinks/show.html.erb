@@ -1,11 +1,13 @@
-<h1><%= @drink.name %></h1>
-<h4><%= @drink.fruit %> </h4>
-<h4><%= @drink.origin %> </h4>
-<h4>$<%= @drink.cost %> </h4>
-<h4><%= @drink.description %> </h4>
-<hr>
+<div class="container">  
+  <h1><%= @drink.name %></h1>
+  <h4><%= @drink.fruit %> </h4>
+  <h4><%= @drink.origin %> </h4>
+  <h4>$<%= @drink.cost %> </h4>
+  <h4><%= @drink.description %> </h4>
+  <hr>
 
-<p><%= link_to "Edit", edit_drink_path(@drink) %></p>
-<p><%= link_to "Delete", drink_path(@drink), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+  <p><%= link_to "Edit", edit_drink_path(@drink) %></p>
+  <p><%= link_to "Delete", drink_path(@drink), :data => {:confirm => "You sure?", :method => "delete"} %></p>
 
-<p><%= link_to "Return to Drinks", drinks_path%></p>
+  <p><%= link_to "Return to Drinks", drinks_path%></p>
+</div>
