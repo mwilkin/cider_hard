@@ -1,20 +1,7 @@
 class BatchesController < ApplicationController
-  def index
-    @batches = Batch.all
-  end
-
-  def show
-    @batch = Batch.find(params[:id])
-  end
-
   def new
     @drink = Drink.find(params[:drink_id])
     @batch = @drink.batches.new
-  end
-
-  def edit
-    @drink = Drink.find(params[:drink_id])
-    @batch = Batch.find(params[:id])
   end
 
   def create
@@ -24,6 +11,21 @@ class BatchesController < ApplicationController
       redirect_to drink_path(@batch.drink)
     else
       render :new
+    end
+
+    def edit
+      @drink = Drink.find(params[:drink_id])
+      @batch = Batch.find(params[:id])
+    end
+
+    def update
+      @drink = Drink.find(params[:drink_id])
+      @batch = Batch.find(params[:id])
+      if @batch.update(batch_params)
+        redirect_to drink_path(@batch.drink)
+      else
+        render :edit
+      end
     end
 
     def destroy
