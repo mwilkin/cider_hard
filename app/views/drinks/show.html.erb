@@ -11,7 +11,7 @@
     <ul>
       <% @drink.batches.each do |batch| %>
         <li>
-          <% batch.batch_name %> | <% batch.fruit_type %> | <% batch.fruit_weight %> | <% batch.barrel_type %> | <% batch.fruit_cost %> | <% batch.alcohol_content %> | <% batch.pH %> | <% batch.temperature %>
+          <%= link_to batch.batch_name, drink_batch_path(batch) %> | <%= batch.fruit_type %> | <%= batch.fruit_weight %> | <%= batch.barrel_type %> | <%= batch.fruit_cost %> | <%= batch.alcohol_content %> | <%= batch.pH %> | <%= batch.temperature %>
           <%= link_to "Edit", edit_drink_batch_path(@drink, batch) %>
           <%= link_to "Delete", drink_batch_path(@drink, batch),
                                       :data => {:confirm => "Are you sure?",
@@ -23,8 +23,8 @@
     <p>There are not batches yet!</p>
   <% end %>
 
-  <p><%= link_to "Add a Batch", new_drink_batch_path(@drink) %></p>
-  <p><%= link_to "Delete Drink", drink_path(@drink),
+  <p><%= link_to "Update Drink", edit_drink_path(@drink) %></p>
+  <p><%= link_to "Delete", drink_path(@drink),
                                     :data => {:confirm => "You sure?",
                                       :method => "delete"} %></p>
 

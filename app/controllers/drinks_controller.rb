@@ -34,7 +34,7 @@ class DrinksController < ApplicationController
   end
 
   def destroy
-    @drink = Drink.fin(params[:id])
+    @drink = Drink.find(params[:id])
     @drink.destroy
     redirect_to drinks_path
   end
