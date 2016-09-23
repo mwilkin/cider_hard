@@ -1,4 +1,4 @@
-<div class="container">  
+<div class="container">
   <h1><%= @drink.name %></h1>
   <h4><%= @drink.fruit %> </h4>
   <h4><%= @drink.origin %> </h4>
@@ -6,8 +6,27 @@
   <h4><%= @drink.description %> </h4>
   <hr>
 
-  <p><%= link_to "Edit", edit_drink_path(@drink) %></p>
-  <p><%= link_to "Delete", drink_path(@drink), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+  <% if @drink.batches.any? %>
+    <h4>Here are the batches for this cider:</h4>
+    <ul>
+      <% @drink.batches.each do |batch| %>
+        <li>
+          <% batch.batch_name %> | <% batch.fruit_type %> | <% batch.fruit_weight %> | <% batch.barrel_type %> | <% batch.fruit_cost %> | <% batch.alcohol_content %> | <% batch.pH %> | <% batch.temperature %>
+          <%= link_to "Edit", edit_drink_batch_path(@drink, batch) %>
+          <%= link_to "Delete", drink_batch_path(@drink, batch),
+                                      :data => {:confirm => "Are you sure?",
+                                                    :method => "delete"} %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are not batches yet!</p>
+  <% end %>
+
+  <p><%= link_to "Add a Batch", new_drink_batch_path(@drink) %></p>
+  <p><%= link_to "Delete Drink", drink_path(@drink),
+                                    :data => {:confirm => "You sure?",
+                                      :method => "delete"} %></p>
 
   <p><%= link_to "Return to Drinks", drinks_path%></p>
 </div>

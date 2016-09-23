@@ -1,0 +1,21 @@
+<%= render ('layout/errors', :object => @batch) %>
+
+<%= form_for [@drink, @batch] do |f| %>
+  <%= f.label :batch_name %>
+  <%= f.text_field :batch_name %>
+  <%= f.label :fruit_type %>
+  <%= f.text_field :fruit_type %>
+  <%= f.label :barrel_type %>
+  <%= f.text_field :barrel_type %>
+  <%= f.label :fruit_weight %>
+  <%= f.text_field :fruit_weight %>
+  <%= f.label :fruit_cost %>
+  <%= f.text_field :fruit_cost %>
+  <%= f.label :alcohol_content %>
+  <%= f.text_field :alcohol_content %>
+  <%= f.label :temperature %>
+  <%= f.text_field :temperature %>
+  <%= f.label :pH %>
+  <%= f.text_field :pH %>
+  <p><%= f.submit %></p>
+<%= end %>
