@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+drinks_list = [
+  ["Noah's Nectar", "Apple", "Meford, OR", "Light and crisp", 12],
+  ["Perry's Pear Cider", "Pear", "Hood River, OR", "delicate sweet", 15],
+  ["Olivia's Grog", "Apple & Pear", "Bend, OR", "Powerful", 21],
+  ["Knotty Apple Cider", "Apple", "Meford, OR", "Light and crisp, with subtle notes of cinnamon", 14],
+  ["Brazen Rasberry Cider", "Rasberry", "Portland, OR", "Dry, colorful finish", 25]
+]
+
+drinks_list.each do |name, fruit, origin, description, cost|
+  Drink.create( name: name, fruit: fruit, origin: origin, description: description, cost: cost)
+end
