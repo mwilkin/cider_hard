@@ -9,13 +9,3 @@ drinks_list = [
 drinks_list.each do |name, fruit, origin, description, cost|
   Drink.create( name: name, fruit: fruit, origin: origin, description: description, cost: cost)
 end
-
-batches_list = [
-  ["alpha", 2500, "Apple", "American Oak", 64, 7.9, 6.8, 0.50],
-  ["beta", 1500, "Pear", "Hungarian Oak", 65, 8.1, 6.1, 0.25],
-  ["theta", 3500, "Apple", "Fench Oak", 68, 9.0, 7, 0.75]
-]
-
-batches_list.each do |batch_name, fruit_weight, fruit_type, barrel_type, temperature, alcohol_content, pH, fruit_cost|
-  Batch.create( batch_name: batch_name, fruit_weight: fruit_weight, fruit_type: fruit_type, barrel_type: barrel_type, temperature: temperature, alcohol_content: alcohol_content, pH: pH, fruit_cost: fruit_cost)
-end
