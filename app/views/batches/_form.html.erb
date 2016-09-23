@@ -1,4 +1,4 @@
-<%= render ('layout/errors', :object => @batch) %>
+<%= render 'layouts/errors', :object => @batch %>
 
 <%= form_for [@drink, @batch] do |f| %>
   <%= f.label :batch_name %>
@@ -18,4 +18,4 @@
   <%= f.label :pH %>
   <%= f.text_field :pH %>
   <p><%= f.submit %></p>
-<%= end %>
+<% end %>

@@ -9,5 +9,6 @@ describe Batch do
   it { should validate_presence_of :alcohol_content}
   it { should validate_presence_of :pH}
   it { should validate_presence_of :fruit_cost}
+  it { should belong_to :drink }
 
 end
