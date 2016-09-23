@@ -6,6 +6,6 @@ drinks_list = [
   ["Brazen Rasberry Cider", "Rasberry", "Portland, OR", "Dry, colorful finish", 25]
 ]
 
-# drinks_list.each do |name, fruit, origin, description, cost|
-#   Drink.create( name: name, fruit: fruit, origin: origin, description: description, cost: cost)
-# end
+drinks_list.each do |name, fruit, origin, description, cost|
+  Drink.create( name: name, fruit: fruit, origin: origin, description: description, cost: cost)
+end
