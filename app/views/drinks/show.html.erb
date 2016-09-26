@@ -1,5 +1,11 @@
 <% content_for(:title, "Cider Optimization") %>
 
+<% content_for(:navbar) do %>
+  <li><a href="/">Home</a></li>
+  <li><a href="/drinks">Ciders</a></li>
+<% end %>
+
+
 <div class="container">
   <h1>Name: <%= @drink.name %></h1>
   <h4>Fruit type: <%= @drink.fruit %> </h4>

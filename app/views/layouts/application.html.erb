@@ -8,6 +8,11 @@
   </head>
 
   <body>
+
+    <div class="navbar">
+      <%= yield(:navbar) %>
+    </div>
+
     <%= flash[:alert] %>
     <%= flash[:notice] %>
     <%= yield %>
