@@ -108,6 +108,7 @@
         1,
         null,
         null,
+        1,
         null,
         null,
         1,
@@ -791,10 +792,21 @@
         1,
         null
       ],
+      "/Users/MVW/cider_hard/spec/factories.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/MVW/cider_hard/spec/factories/users.rb": [
         1,
         1,
-        null,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -929,9 +941,12 @@
         null,
         1,
         null,
+        null,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1474892386
+    "timestamp": 1474893967
   }
 }
