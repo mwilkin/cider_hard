@@ -18,6 +18,7 @@ class DrinksController < ApplicationController
   def create
     @drink = Drink.new(drink_params)
     if @drink.save
+      flash[:notice] = "Cider successfully created!"
       redirect_to drinks_path
     else
       render :new
@@ -27,6 +28,7 @@ class DrinksController < ApplicationController
   def update
     @drink = Drink.find(params[:id])
     if @drink.update(drink_params)
+      flash[:notice] = "Cider successfully updated!"
       redirect_to drinks_path
     else
       render :edit
@@ -36,6 +38,7 @@ class DrinksController < ApplicationController
   def destroy
     @drink = Drink.find(params[:id])
     @drink.destroy
+    flash[:notice] = "Cider successfully deleted!"
     redirect_to drinks_path
   end
 

@@ -14,6 +14,7 @@ class BatchesController < ApplicationController
     @drink = Drink.find(params[:drink_id])
     @batch = @drink.batches.new(batch_params)
     if @batch.save
+      flash[:notice] = "Batch successfully created!"
       redirect_to drink_path(@batch.drink)
     else
       render :new
@@ -28,6 +29,7 @@ class BatchesController < ApplicationController
       @drink = Drink.find(params[:drink_id])
       @batch = Batch.find(params[:id])
       if @batch.update(batch_params)
+        flash[:notice] = "Batch successfully updated!"
         redirect_to drink_path(@batch.drink)
       else
         render :edit
@@ -37,6 +39,7 @@ class BatchesController < ApplicationController
     def destroy
       @batch = Batch.find(params[:id])
       @batch.destroy
+      flash[:notice] = "Batch successfully deleted!"
       redirect_to drink_path(@batch.drink)
     end
 
