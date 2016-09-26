@@ -5,14 +5,19 @@
   <li><a href="/drinks">Ciders</a></li>
 <% end %>
 
-<h1>Drinks</h1>
-<div class="container">
-  <ul>
-    <% @drinks.each do |drink| %>
-      <li><%= link_to drink.name, drink_path(drink) %></li>
-    <% end %>
-  </ul>
-  <hr>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <h1>Drinks</h1>
+    <div class="container">
+      <ul>
+        <% @drinks.each do |drink| %>
+        <li><%= link_to drink.name, drink_path(drink) %></li>
+        <% end %>
+      </ul>
+      <hr>
 
-  <%= link_to "New Drink", new_drink_path %>
+      <%= link_to "New Drink", new_drink_path, :class => "btn btn-default btn-lg" %>
+
+  </div>
+</div>
 </div>

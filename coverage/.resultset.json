@@ -754,6 +754,17 @@
         1,
         null
       ],
+      "/Users/MVW/cider_hard/app/mailers/user_mailer.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
       "/Users/MVW/cider_hard/app/models/batch.rb": [
         1,
         1,
@@ -921,6 +932,6 @@
         null
       ]
     },
-    "timestamp": 1474891573
+    "timestamp": 1474892386
   }
 }
