@@ -19,5 +19,4 @@ describe "the add a drink process" do
     expect(page).to have_content 'errors'
   end
 
-
 end

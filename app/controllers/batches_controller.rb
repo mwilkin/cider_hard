@@ -1,9 +1,5 @@
 class BatchesController < ApplicationController
 
-  def index
-    @batches = Batch.all
-  end
-
   def show
     @drink = Drink.find(params[:drink_id])
     @batch = Batch.find(params[:id])
