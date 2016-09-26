@@ -8,13 +8,14 @@
   </head>
 
   <body>
+    <div class="container">
+      <div class="navbar">
+        <%= yield(:navbar) %>
+      </div>
 
-    <div class="navbar">
-      <%= yield(:navbar) %>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      <%= yield %>
     </div>
-
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-    <%= yield %>
   </body>
 </html>
