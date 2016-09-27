@@ -9,3 +9,5 @@ drinks_list = [
 drinks_list.each do |name, fruit, origin, description, cost|
   Drink.create( name: name, fruit: fruit, origin: origin, description: description, cost: cost)
 end
+
+User.create!(email:test@test.com, password: "drinking")

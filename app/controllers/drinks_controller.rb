@@ -52,5 +52,6 @@ private
 
   def find_drink
     @drink = Drink.find(params[:id])
+  end
 
 end
