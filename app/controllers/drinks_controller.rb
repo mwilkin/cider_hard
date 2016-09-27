@@ -1,4 +1,7 @@
 class DrinksController < ApplicationController
+  before_action :find_drink, only: [:show, :edit, :update, :destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @drinks = Drink.all
   end
@@ -46,5 +49,8 @@ private
   def drink_params
     params.require(:drink).permit(:name, :fruit, :origin, :description, :cost)
   end
+
+  def find_drink
+    @drink = Drink.find(params[:id])
 
 end

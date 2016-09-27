@@ -1,5 +1,6 @@
 class Drink < ActiveRecord::Base
   has_many :batches
+  belongs_to :user
   
   validates :name, :presence => true
   validates :fruit, :presence => true
