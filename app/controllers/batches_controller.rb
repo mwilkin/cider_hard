@@ -8,6 +8,10 @@ class BatchesController < ApplicationController
   def new
     @drink = Drink.find(params[:drink_id])
     @batch = @drink.batches.new
+    respond_to do |format|
+      format.html { render :new }
+      format.js
+    end
   end
 
   def create
@@ -23,6 +27,10 @@ class BatchesController < ApplicationController
     def edit
       @drink = Drink.find(params[:drink_id])
       @batch = Batch.find(params[:id])
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
     end
 
     def update

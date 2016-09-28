@@ -1,6 +1,6 @@
 <%= render 'layouts/errors', :object => @batch %>
 
-<%= form_for [@drink, @batch] do |f| %>
+<%= form_for [@drink, @batch], remote: true do |f| %>
   <%= f.label :batch_name %>
   <%= f.text_field :batch_name %>
   <%= f.label :fruit_type %>
