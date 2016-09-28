@@ -1,6 +1,6 @@
 class DrinksController < ApplicationController
   before_action :find_drink, only: [:show, :edit, :update, :destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
+
 
   def index
     @drinks = Drink.all
@@ -12,10 +12,18 @@ class DrinksController < ApplicationController
 
   def new
     @drink = Drink.new
+    respond_to do |format|
+      format.html { render :new }
+      format.js
+    end
   end
 
   def edit
     @drink = Drink.find(params[:id])
+    respond_to do |format|
+      format.html { render edit }
+      format.js
+    end
   end
 
   def create
@@ -50,8 +58,8 @@ private
     params.require(:drink).permit(:name, :fruit, :origin, :description, :cost)
   end
 
-  def find_drink
-    @drink = Drink.find(params[:id])
-  end
+  # def find_drink
+  #   @drink = Drink.find(params[:id])
+  # end
 
 end

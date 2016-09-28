@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root :to => 'drinks#index'
+  root :to => 'pages#home'
   resources :drinks do
-    resources :batches, :except => [:show, :index ]
+    resources :batches
   end
 end
