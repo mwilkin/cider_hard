@@ -30,12 +30,13 @@
   <% else %>
     <p>There are not batches yet!</p>
   <% end %>
-
+  <% if user_signed_in? %>
   <p><%= link_to "Add a Batch", new_drink_batch_path(@drink), id: "new_batch_js", remote: true %></p>
   <p><%= link_to "Update Drink", edit_drink_path(@drink), id: "edit_drink_js", remote: true %></p>
   <p><%= link_to "Delete Drink", drink_path(@drink),
                                     :data => {:confirm => "You sure?",
                                       :method => "delete"} %></p>
 
+  <% end %>
   <p><%= link_to "Return to Drinks", drinks_path%></p>
 </div>

@@ -1,5 +1,5 @@
 class DrinksController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @drinks = Drink.all
   end
@@ -26,6 +26,7 @@ class DrinksController < ApplicationController
 
   def create
     @drink = Drink.new(drink_params)
+    @drink.user = current_user
     if @drink.save
       flash[:notice] = "Cider successfully created!"
       redirect_to drinks_path

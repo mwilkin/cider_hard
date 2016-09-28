@@ -15,8 +15,9 @@
         <% end %>
       </ul>
       <hr>
-
+      <% if user_signed_in? %>
       <%= link_to "New Drink", new_drink_path, :class => "btn btn-default btn-lg", id: "new_drink_js", remote: true %>
+      <% end %>
 
   </div>
 </div>
