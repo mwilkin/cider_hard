@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
