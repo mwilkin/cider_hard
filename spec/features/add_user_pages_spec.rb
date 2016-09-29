@@ -10,7 +10,7 @@ describe "the add a user process" do
     expect(page).to have_content 'Welcome'
   end
 
-  it 'gives an error when  no title is entered' do
+  it 'gives an error when no email is entered' do
     visit new_user_registration_path
     click_on 'Sign up'
     expect(page).to have_content 'errors'
@@ -20,10 +20,8 @@ end
 describe 'user log in process' do
   it 'allows an existing user to sign in' do
     user = FactoryGirl.create(:user)
-    visit new_user_session_path
-
-    fill_in "Email", with: 'test@email.com'
-    fill_in 'Password', with: 'password'
+    login_as(user, :scope => :user, :run_callbacks => false)
+    visit drinks_path
     expect(page).to have_content('Sign Out')
   end
 end

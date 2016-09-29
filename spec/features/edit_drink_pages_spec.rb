@@ -2,11 +2,9 @@ require 'rails_helper'
 
 describe "the edit a drink process" do
   it 'edits a new drink', js: true do
-    drink = Drink.create(:name => "Noah's Nectar", :fruit => "Pear", :origin => "Medford", :description => "crisp and lemony", :cost => 12)
-    user = User.create({email: 'test@email.com',
-    password: 'password', password_confirmation:'password'})
-    login_as(user, :scope => :user, :run_callbacks => false)
-    click_link 'Noah\'s Nectar'
+    drink = FactoryGirl.create(:drink)
+    login_as(drink.user, :scope => :user, :run_callbacks => false)
+    visit drink_path(drink)
     click_link 'Update Drink'
     fill_in 'Name', :with => 'Noah\'s Fantastic Nectar'
     click_on 'Update Drink'
@@ -14,9 +12,9 @@ describe "the edit a drink process" do
   end
 
   it 'gives an error when no name is entered', js: true do
-    user = User.create({email: 'test@email.com',
-    password: 'password', password_confirmation:'password'})
-    login_as(user, :scope => :user, :run_callbacks => false)
+    drink = FactoryGirl.create(:drink)
+    login_as(drink.user, :scope => :user, :run_callbacks => false)
+    visit drinks_path
     click_link "New Drink"
     fill_in 'Name', :with => 'Noah\'s Nectar'
     fill_in 'Fruit', :with => 'Apple'
