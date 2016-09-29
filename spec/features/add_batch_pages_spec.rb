@@ -21,11 +21,8 @@ describe 'the add a batch process'do
 
   it 'gives an error when a field is left blank', js: true do
     drink = FactoryGirl.create(:drink)
-    user = User.create({email: 'test@email.com',
-    password: 'password', password_confirmation:'password'})
-    login_as(user, :scope => :user, :run_callbacks => false)
-    visit drinks_path
-    click_link 'Brazen Apple'
+    login_as(drink.user, :scope => :user, :run_callbacks => false)
+    visit drink_path(drink)
     click_link 'Add a Batch'
     fill_in 'Batch name', :with => ''
     fill_in 'Fruit type', :with => 'pear'
