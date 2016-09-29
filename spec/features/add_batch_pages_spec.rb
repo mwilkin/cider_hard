@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-describe 'the add a batch process' do
-  it 'add a batch' do
-    drink = Drink.create(:name => "Noah's Nectar", :fruit => "Pear", :origin => "Medford", :description => "crisp and lemony", :cost => 12)
+describe 'the add a batch process'do
+  it 'add a batch', js: true  do
+    drink = FactoryGirl.create(:drink)
+    login_as(drink.user, :scope => :user, :run_callbacks => false)
     visit drinks_path
-    click_link 'Noah\'s Nectar'
+    click_link "Brazen Apple"
     click_link 'Add a Batch'
     fill_in 'Batch name', :with => 'alpha'
     fill_in 'Fruit type', :with => 'pear'
@@ -18,10 +19,13 @@ describe 'the add a batch process' do
     expect(page).to have_content 'alpha'
   end
 
-  it 'gives an error when a field is left blank' do
-    drink = Drink.create(:name => "Mammoth Cider", :fruit => "Apple", :origin => "Medford", :description => "crisp and lemony", :cost => 12)
+  it 'gives an error when a field is left blank', js: true do
+    drink = FactoryGirl.create(:drink)
+    user = User.create({email: 'test@email.com',
+    password: 'password', password_confirmation:'password'})
+    login_as(user, :scope => :user, :run_callbacks => false)
     visit drinks_path
-    click_link 'Mammoth Cider'
+    click_link 'Brazen Apple'
     click_link 'Add a Batch'
     fill_in 'Batch name', :with => ''
     fill_in 'Fruit type', :with => 'pear'

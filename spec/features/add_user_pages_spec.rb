@@ -24,6 +24,6 @@ describe 'user log in process' do
 
     fill_in "Email", with: 'test@email.com'
     fill_in 'Password', with: 'password'
-    expect(page).to have_content('Signed in successfully.')
+    expect(page).to have_content('Sign Out')
   end
 end
