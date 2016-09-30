@@ -57,6 +57,10 @@ $ rake db:migrate db:test:prepare
 ```
 $ rake db:seed
 ```
+* Create a .env file and paste in contents of sample.env
+```
+$ source .env
+```
 * Launch the Rails server
 ```
 $ rails server
