@@ -20,11 +20,13 @@
       <% @drink.batches.each do |batch| %>
         <li>
           <%= link_to batch.batch_name, drink_batch_path(batch) %> | <%= batch.fruit_type %> | <%= batch.fruit_weight %> | <%= batch.barrel_type %> | <%= batch.fruit_cost %> | <%= batch.alcohol_content %> | <%= batch.pH %> | <%= batch.temperature %>
+          <% if user_signed_in? %>
           <%= link_to "Edit", edit_drink_batch_path(@drink, batch), id: "edit_batch_js", remote: true %> |
           <%= link_to "Delete", drink_batch_path(@drink, batch),
                                       :data => {:confirm => "Are you sure?",
                                                     :method => "delete"} %>
         </li>
+        <% end %>
       <% end %>
     </ul>
   <% else %>
