@@ -1,1 +1,1 @@
-$('#edit_drink_js').hide().after('<%= j render("form") %>')
+$('#drink-<%= @drink.id %>').html('<%= j render("form") %>')
