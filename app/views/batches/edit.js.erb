@@ -1,1 +1,2 @@
-$('#edit_batch_js').hide().after('<%= j render("form") %>')
+
+$('#batch-<%= @batch.id %>').html('<%= j render("form") %>')

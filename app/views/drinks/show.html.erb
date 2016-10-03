@@ -25,6 +25,9 @@
           <%= link_to "Delete", drink_batch_path(@drink, batch),
                                       :data => {:confirm => "Are you sure?",
                                                     :method => "delete"} %>
+          <div id="batch-<%= batch.id %>">
+            
+          </div>
         </li>
         <% end %>
       <% end %>

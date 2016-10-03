@@ -28,7 +28,7 @@ class BatchesController < ApplicationController
       @drink = Drink.find(params[:drink_id])
       @batch = Batch.find(params[:id])
       respond_to do |format|
-        format.html { render :edit }
+        format.html
         format.js
       end
     end
