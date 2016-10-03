@@ -77,14 +77,14 @@ https://github.com/plataformatec/devise/wiki/How-To:-Test-with-Capybara
 
 _If you run into any issues or have questions, ideas, or concerns, please feel free to contact Noah:_
 
-* _Noah Yasskin: <a href="mailto:noahyasskin@gmail.com">noahyasskin@gmail.com</a>_
+* _Matt Wilkin <a href="mailto:mattwilkin@gmail.com">mattwilkin@gmail.com</a>_
 
 ### License
 
 *MIT License*
 
 The MIT License (MIT)
-Copyright (c) 2016, Maarja Laineste, Caleb Stokka, Sky Rousse, and Noah Yasskin
+Copyright (c) 2016, Matt Wilkin
 https://opensource.org/licenses/MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
