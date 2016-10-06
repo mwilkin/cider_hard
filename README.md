@@ -77,7 +77,7 @@ https://github.com/plataformatec/devise/wiki/How-To:-Test-with-Capybara
 
 _If you run into any issues or have questions, ideas, or concerns, please feel free to contact Noah:_
 
-* _Matt Wilkin <a href="mailto:mattwilkin@gmail.com">mattwilkin@gmail.com</a>_
+* _<a href="mailto:mwilkin22@gmail.com">Matt Wilkin </a>_
 
 ### License
 
